@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1.300-buster
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1.301-buster
 
 # Install the base requirements to run and debug webdriver implementations:
 RUN export DEBIAN_FRONTEND=noninteractive \
