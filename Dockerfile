@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1.401-buster
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1.402-buster
 
 # Install the base requirements to run and debug webdriver implementations:
 RUN export DEBIAN_FRONTEND=noninteractive \
@@ -54,7 +54,7 @@ RUN export DEBIAN_FRONTEND=noninteractive \
   # Patch Chrome launch script and append CHROMIUM_FLAGS to the last line:
   && sed -i '${s/$/'" $CHROMIUM_FLAGS"'/}' /opt/google/chrome/google-chrome \
   && BASE_URL=https://chromedriver.storage.googleapis.com \
-  && VERSION=$(curl -sL "$BASE_URL/LATEST_RELEASE_85") \
+  && VERSION=$(curl -sL "$BASE_URL/LATEST_RELEASE") \
   && curl -sL "$BASE_URL/$VERSION/chromedriver_linux64.zip" -o /tmp/driver.zip \
   && unzip /tmp/driver.zip \
   && chmod 755 chromedriver \
